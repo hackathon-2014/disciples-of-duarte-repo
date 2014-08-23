@@ -29,6 +29,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.DetailActivity"
+            android:theme="@style/Theme.Hyper"
+            />
+
         <service android:name="com.estimote.sdk.service.BeaconService"
             android:exported="false"/>
 

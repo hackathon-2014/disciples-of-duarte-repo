@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@color/white"
         >
 
         <TextView
@@ -19,7 +20,6 @@
 
             android:text="Steve Rogers struggles to embrace his role in the modern world and battles a new threat from old history: the Soviet agent known as the Winter Soldier."
             android:textSize="18sp"
-            android:maxLines="3"
             />
 
         <View

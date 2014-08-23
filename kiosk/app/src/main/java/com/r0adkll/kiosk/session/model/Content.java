@@ -6,8 +6,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -23,10 +25,11 @@ public class Content implements Parcelable{
 
     public long id;
     public String type;
-    public Set<Long> locationIds;
+    public List<Long> locationIds;
     public String url;
     public String name;
     public String description;
+    public String summary;
     public JSONObject metadata;
 
     public Content(){}
@@ -41,7 +44,8 @@ public class Content implements Parcelable{
         url = json.optString("url");
         name = json.optString("name");
         description = json.optString("description");
-        locationIds = new HashSet<>();
+        summary = json.optString("summary");
+        locationIds = new ArrayList<>();
 
         JSONArray locIds = json.optJSONArray("location_ids");
         int N = locIds.length();
@@ -57,10 +61,19 @@ public class Content implements Parcelable{
     public Content(Parcel in){
         id = in.readLong();
         type = in.readString();
-        locationIds = new HashSet<>(Arrays.asList((Long[]) in.readArray(null)));
+
+        int N = in.readInt();
+        long[] ids = new long[N];
+        in.readLongArray(ids);
+        locationIds = new ArrayList<>();
+        for(long lid: ids){
+            locationIds.add(lid);
+        }
+
         url = in.readString();
         name = in.readString();
         description = in.readString();
+        summary = in.readString();
         try {
             metadata = new JSONObject(in.readString());
         } catch (JSONException e) {
@@ -106,10 +119,18 @@ public class Content implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
         dest.writeString(type);
-        dest.writeArray(locationIds.toArray());
+
+        long[] ids = new long[locationIds.size()];
+        for(Long id: locationIds){
+            ids[locationIds.indexOf(id)] = id;
+        }
+
+        dest.writeInt(locationIds.size());
+        dest.writeLongArray(ids);
         dest.writeString(url);
         dest.writeString(name);
         dest.writeString(description);
+        dest.writeString(summary);
         dest.writeString(metadata.toString());
     }
 

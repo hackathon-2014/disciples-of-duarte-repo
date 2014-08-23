@@ -15,6 +15,7 @@ public class Kiosk extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kiosk);
+        getActionBar().setIcon(R.drawable.ic_action_hyper);
 
         initKiosk();
 

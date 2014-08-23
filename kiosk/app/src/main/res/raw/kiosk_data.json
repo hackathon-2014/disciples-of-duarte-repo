@@ -63,16 +63,36 @@
 			],
 			"type":"movies",
 			"name":"Captain America: The Winter Soldier",
-			"description" : "Some Description here.",
-			"url":"http://youtube.com/kjiueiowezxc",
+			"summary" : "Steve Rogers struggles to embrace his role in the modern world and battles a new threat from old history: the Soviet agent known as the Winter Soldier.",
+			"description" : "For Steve Rogers, awakening after decades of suspended animation involves more than catching up on pop culture; it also means that this old school idealist must face a world of subtler threats and difficult moral complexities.\n\nThat comes clear when Director Nick Fury is killed by the mysterious assassin, the Winter Soldier, but not before warning Rogers that SHIELD has been subverted by its enemies. When Rogers acts on Fury's warning to trust no one there, he is branded as a traitor by the organization. Now a fugitive, Captain America must get to the bottom of this deadly mystery with the help of the Black Widow and his new friend, The Falcon.\n\nHowever, the battle will be costly for the Sentinel of Liberty, with Rogers finding enemies where he least expects them while learning that the Winter Soldier looks disturbingly familiar.",
+			"url":"https://www.youtube.com/watch?v=7SlILk2WMTI",
 			"metadata":{
 				"poster": "http://placecage.com/200/300",
 				"banner": "http://www.placecage.com/1000/400",
-				"length":7200,
+				"length":8160,
 				"format":"H.264",
 				"date":"APRIL 2014",
-				"rt_rating":"7.1 out of 10",
-				"imdb_rating":"8 out of 10",
+				"imdb_rating":"8.0 / 10.0",
+				"mpaa":"PG-13"
+			}
+		},
+		{
+			"id":0,
+			"location_ids":[
+				2
+			],
+			"type":"movies",
+			"name":"The Quiet Ones",
+			"summary" : "A university professor and a team of students conduct an experiment on a young woman, uncovering terrifyingly dark, unexpected forces in the process.",
+			"description" : "From the producer who brought you The Woman In Black and Let Me In comes the unnerving tale of The Quiet Ones. Tucked away in an estate outside of London, Professor Coupland along with a team of university students conduct an “experiment” on Jane Harper, a young girl who harbors unspeakable secrets.\n\nWhat dark forces they uncover are more terrifying than any of them expected. Inspired by true events, the film stars Jared Harris (Mad Men and Sherlock Homes: A Game of Shadows), Sam Claflin (The Hunger Games: Catching Fire), Olivia Cooke (Bates Motel), and is directed by John Pogue from a screenplay by Craig Rosenberg and Oren Moverman and John Pogue, and based on a screenplay by Tom de Ville",
+			"url":"https://www.youtube.com/watch?v=70fq90qn-k8",
+			"metadata":{
+				"poster": "http://placecage.com/200/300",
+				"banner": "http://www.placecage.com/1000/400",
+				"length":5880,
+				"format":"H.264",
+				"date":"APRIL 2014",
+				"imdb_rating":"5.2 / 10.0",
 				"mpaa":"PG-13"
 			}
 		},
@@ -83,16 +103,16 @@
 			],
 			"type":"movies",
 			"name":"The Amazing Spider-Man 2",
-			"description" : "Some Description here.",
-			"url":"http://youtube.com/kjasdiufdk",
+			"summary":"Peter Parker runs the gauntlet as the mysterious company Oscorp sends up a slew of super villains against him, impacting his life.",
+			"description" : "We've always known that Spider-Man's most important conflict has been within himself: the struggle between the ordinary obligations of Peter Parker and the extraordinary responsibilities of Spider-Man. But in The Amazing Spider-Man 2, Peter Parker finds that his greatest battle is about to begin. It's great to be Spider-Man.\n\nFor Peter Parker, there's no feeling quite like swinging between skyscrapers, embracing being the hero, and spending time with Gwen. But being Spider-Man comes at a price: only Spider-Man can protect his fellow New Yorkers from the formidable villains that threaten the city. With the emergence of Electro, Peter must confront a foe far more powerful than he.\n\nAnd as his old friend, Harry Osborn, returns, Peter comes to realize that all of his enemies have one thing in common: Oscorp.",
+			"url":"https://www.youtube.com/watch?v=nbp3Ra3Yp74",
 			"metadata":{
 				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://www.placecage.com/1000/400",
-				"length":7800,
+				"length":8520,
 				"format":"H.264",
-				"date":"APRIL 2014",
-				"rt_rating":"7.1 out of 10",
-				"imdb_rating":"8 out of 10",
+				"date":"MAY 2014",
+				"imdb_rating":"7.1 / 10.0",
 				"mpaa":"PG-13"
 			}
 		},
@@ -102,18 +122,38 @@
 				2
 			],
 			"type":"movies",
-			"name":"Iron Man 3",
-			"description" : "Some Description here.",
-			"url":"http://youtube.com/kjasdasdfk",
+			"name":"Fading Gigolo",
+			"summary":"Fioravante decides to become a professional Don Juan as a way of making money to help his cash-strapped friend, Murray. With Murray acting as his \"manager\", the duo quickly finds themselves caught up in the crosscurrents of love and money.",
+			"description" : "In Brooklyn, the bankrupted owner of a book store Fioravante is forced to close his family business. His best friend Murray tells that his dermatologist Dr. Parker dreams on having a threesome and would pay a thousand-dollar to have with her friend Selima.\n\nMurray proposes to be Fioravante's gigolo and they start a male prostitution business. When Fioravante meets the Jewish Avigal, who is the widow of a rabbi, they fall in love with each other. But the Jewish Dovi loves Avigal and will make life difficult for Murray.",
+			"url":"https://www.youtube.com/watch?v=4r7lSsLtg3wj",
 			"metadata":{
 				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://www.placecage.com/1000/400",
 				"length":7100,
 				"format":"H.264",
 				"date":"APRIL 2014",
-				"rt_rating":"7.1 out of 10",
-				"imdb_rating":"8 out of 10",
-				"mpaa":"PG-13"
+				"imdb_rating":"6.1 / 10.0",
+				"mpaa":"R"
+			}
+		},
+		{
+			"id":2,
+			"location_ids":[
+				2
+			],
+			"type":"movies",
+			"name":"Noah",
+			"summary":"A man is chosen by his world's creator to undertake a momentous mission before an apocalyptic flood cleanses the world.",
+			"description" : "In Brooklyn, the bankrupted owner of a book store Fioravante is forced to close his family business. His best friend Murray tells that his dermatologist Dr. Parker dreams on having a threesome and would pay a thousand-dollar to have with her friend Selima.\n\nMurray proposes to be Fioravante's gigolo and they start a male prostitution business. When Fioravante meets the Jewish Avigal, who is the widow of a rabbi, they fall in love with each other. But the Jewish Dovi loves Avigal and will make life difficult for Murray.",
+			"url":"https://www.youtube.com/watch?v=4r7lSsLtg3wj",
+			"metadata":{
+				"poster": "http://www.placecage.com/200/300",
+				"banner": "http://www.placecage.com/1000/400",
+				"length":7100,
+				"format":"H.264",
+				"date":"APRIL 2014",
+				"imdb_rating":"6.1 / 10.0",
+				"mpaa":"R"
 			}
 		},
 		{

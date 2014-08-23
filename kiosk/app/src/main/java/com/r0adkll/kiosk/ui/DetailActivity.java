@@ -2,13 +2,9 @@ package com.r0adkll.kiosk.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,26 +19,8 @@ import butterknife.InjectView;
 /**
  * Created by r0adkll on 8/23/14.
  */
-public class MovieDetailFragment extends Fragment {
+public class DetailActivity extends Activity {
 
-    /***************************************************************************************
-     *
-     * Static Initializer
-     *
-     */
-
-    /**
-     * Create a new instance of this fragment
-     *
-     * @return the newly created instance
-     */
-    public static MovieDetailFragment createInstance(Content content) {
-        MovieDetailFragment frag = new MovieDetailFragment();
-        Bundle args = new Bundle();
-        args.putParcelable("content", content);
-        frag.setArguments(args);
-        return frag;
-    }
 
     /***************************************************************************************
      *
@@ -80,7 +58,7 @@ public class MovieDetailFragment extends Fragment {
     /**
      * Empty Constructor
      */
-    public MovieDetailFragment() {
+    public DetailActivity() {
     }
 
 
@@ -92,8 +70,18 @@ public class MovieDetailFragment extends Fragment {
 
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getActionBar().setIcon(R.drawable.ic_action_hyper);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if(getIntent() != null){
+            mContent = getIntent().getParcelableExtra("content");
+        }
+
+        if(savedInstanceState != null){
+            mContent = getIntent().getParcelableExtra("content");
+        }
 
         mFadingHelper = new FadingActionBarHelper()
                 .actionBarBackground(R.drawable.ab_background)
@@ -101,43 +89,33 @@ public class MovieDetailFragment extends Fragment {
                 .contentLayout(R.layout.fragment_detail)
                 .lightActionBar(true);
 
-        mFadingHelper.initActionBar(activity);
+        setContentView(mFadingHelper.createView(this));
+        ButterKnife.inject(this);
 
-    }
+        mFadingHelper.initActionBar(this);
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        Bundle args = new Bundle();
-        if(args != null){
-            mContent = args.getParcelable("content");
-        }
-
-        // Initialize Views
         initViews();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View layout = mFadingHelper.createView(inflater);
-        ButterKnife.inject(this, layout);
-        return layout;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_share, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+            case R.id.action_share:
+                // Some Share action
+
+
+                return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -149,6 +127,12 @@ public class MovieDetailFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("content", mContent);
     }
 
     /***************************************************************************************
@@ -163,7 +147,7 @@ public class MovieDetailFragment extends Fragment {
     private void initViews() {
 
         mTitle.setText(mContent.name);
-        mShortDescription.setText(mContent.description);
+        mShortDescription.setText(mContent.summary);
         mFullDescription.setText(mContent.description);
 
         ImageLoader.getInstance().displayImage(mContent.metadata.optString("banner"), mBanner);
@@ -171,11 +155,12 @@ public class MovieDetailFragment extends Fragment {
         // Fill out the info section from meta-data
         switch (mContent.type){
             case Content.MOVIE:
+                mWatchNow.setText("WATCH NOW");
 
                 int seconds = mContent.metadata.optInt("length", 0);
                 int minutes = seconds / 60;
 
-                mInfo1.setText(minutes + " MINUTES");
+                mInfo1.setText(minutes + " MIN");
                 mInfo1.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_action_runtime), null, null, null);
 
                 String mpaa = mContent.metadata.optString("mpaa", "N/A");
@@ -186,21 +171,48 @@ public class MovieDetailFragment extends Fragment {
                 mInfo3.setText(date);
                 mInfo3.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_action_release), null, null, null);
 
-                String rating = mContent.metadata.optString("rt_rating");
+                String rating = mContent.metadata.optString("imdb_rating");
                 mInfo4.setText(rating);
                 mInfo4.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_action_rating), null, null, null);
 
                 break;
             case Content.MUSIC:
+                mWatchNow.setText("PLAY NOW");
+
 
                 break;
             case Content.TVSHOW:
 
+
                 break;
             case Content.MAGAZINE:
+                mWatchNow.setText("READ NOW");
+
+                String author = mContent.metadata.optString("author");
+                mInfo1.setText(author);
+                mInfo1.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_action_author), null, null, null);
+
+                int pages = mContent.metadata.optInt("page_count", 0);
+                mInfo2.setText(String.format("%d PAGES", pages));
+                mInfo2.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_action_pages), null, null, null);
+
+                String bookDate = mContent.metadata.optString("date", "N/A");
+                mInfo3.setText(bookDate);
+                mInfo3.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_action_release), null, null, null);
+
+                String bookRating = mContent.metadata.optString("rating");
+                mInfo4.setText(bookRating);
+                mInfo4.setCompoundDrawablesWithIntrinsicBounds(getResources().getDrawable(R.drawable.ic_action_rating), null, null, null);
 
                 break;
         }
+
+        mWatchNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 

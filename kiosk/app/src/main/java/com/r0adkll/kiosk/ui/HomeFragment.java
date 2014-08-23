@@ -1,5 +1,6 @@
 package com.r0adkll.kiosk.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TabHost;
 
@@ -326,6 +328,17 @@ public class HomeFragment extends Fragment {
             mContent = new ArrayList<>();
             mAdapter = new ContentListAdapter(getActivity(), mContent);
             mList.setAdapter(mAdapter);
+
+            mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Content item = (Content) parent.getItemAtPosition(position);
+                    Intent detail = new Intent(getActivity(), DetailActivity.class);
+                    detail.putExtra("content", item);
+                    startActivity(detail);
+
+                }
+            });
 
         }
 
