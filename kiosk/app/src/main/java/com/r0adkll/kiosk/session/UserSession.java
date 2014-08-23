@@ -3,12 +3,24 @@ package com.r0adkll.kiosk.session;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 
 import com.estimote.sdk.Beacon;
 import com.google.gson.Gson;
 import com.r0adkll.deadskunk.utils.SecurePreferences;
+import com.r0adkll.kiosk.R;
+import com.r0adkll.kiosk.session.model.Content;
 import com.r0adkll.kiosk.session.model.Location;
 
+import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
@@ -60,6 +72,9 @@ public class UserSession {
     private SharedPreferences mGenPrefs;
     private SharedPreferences mDefaultPrefs;
 
+    private HashMap<Long, Location> mLocations = new HashMap<>();
+    private HashMap<Long, Content> mContent = new HashMap<>();
+
 
     /**********************************************************
      *
@@ -86,10 +101,43 @@ public class UserSession {
      *
      */
 
-    private void loadKioskData(){
+    private void loadKioskData(Context ctx){
 
         // Load Kiosk JSON data from raw directory
+        InputStream is = ctx.getResources().openRawResource(R.raw.kiosk_data);
+        StringWriter writer = new StringWriter();
+        try {
+            IOUtils.copy(is, writer);
+            String rawJson = writer.toString();
 
+            JSONObject json = new JSONObject(rawJson);
+
+            // Begin parsing kiosk data
+            JSONArray locations = json.optJSONArray("locations");
+            int N = locations.length();
+            for(int i=0; i<N; i++){
+                JSONObject location = locations.optJSONObject(i);
+                Location newLocation = new Location(location);
+                mLocations.put(newLocation.id, newLocation);
+            }
+
+            // parse content
+            JSONArray contents = json.optJSONArray("content");
+            int N2 = contents.length();
+            for(int i=0; i<N2; i++){
+                JSONObject content = contents.optJSONObject(i);
+                Content newContent = new Content(content);
+                mContent.put(newContent.id, newContent);
+            }
+
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 

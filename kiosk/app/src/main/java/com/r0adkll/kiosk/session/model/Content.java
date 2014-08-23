@@ -11,7 +11,13 @@ import java.util.Set;
  */
 public class Content {
 
+    public static final String MOVIE = "movie";
+    public static final String TVSHOW = "tvshow";
+    public static final String MAGAZINE = "magazine";
+    public static final String MUSIC = "music";
+
     public long id;
+    public String type;
     public Set<Long> locationIds;
     public String url;
     public String name;
@@ -25,6 +31,7 @@ public class Content {
      */
     public Content(JSONObject json){
         id = json.optLong("id");
+        type = json.optString("type");
         url = json.optString("url");
         name = json.optString("name");
         locationIds = new HashSet<>();

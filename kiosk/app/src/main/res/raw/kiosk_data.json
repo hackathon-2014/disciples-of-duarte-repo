@@ -4,9 +4,10 @@
 			"id":1,
 			"name":"Bathroom",
 			"beacon":{
+				"uuid":"someuuid",
 				"mac":"DC:0A:EE:01:28:18",
 				"major":10264,
-				"minor":60929
+				"minor":60929,
 			},
 			"range":5.0,
 			"company_id": 1,
@@ -17,6 +18,7 @@
 			"id":2,
 			"name":"Cardio Deck",
 			"beacon":{
+				"uuid":"someuuid",
 				"mac":"F8:2D:96:9B:41:C2",
 				"major":16834,
 				"minor":38555
@@ -30,6 +32,7 @@
 			"id":3,
 			"name":"Weight Room",
 			"beacon":{
+				"uuid":"someuuid",
 				"mac":"FF:F9:72:0A:9C:09",
 				"major":39945,
 				"minor":29194
@@ -203,7 +206,7 @@
 						"artist": "Tegan and Sara, The Lonely Island",
 						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
 						"length": 300
-					},
+					}
 				]
 			}
 		}
