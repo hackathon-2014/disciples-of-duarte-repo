@@ -21,4 +21,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'com.jakewharton.timber:timber:2.4.+'
+    compile 'com.jakewharton:butterknife:5.1.2'
+
+    compile 'com.r0adkll:deadskunk:1.0.0'
+    compile 'com.r0adkll:slidableactivity:1.0.0'
+    compile 'com.r0adkll:postoffice:1.0.0'
+
+    compile 'com.squareup.okhttp:okhttp:+'
+    compile 'com.squareup.retrofit:retrofit:1.6.1'
+
 }

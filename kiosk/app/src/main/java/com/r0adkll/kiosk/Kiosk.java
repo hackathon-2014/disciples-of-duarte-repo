@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.r0adkll.kiosk.session.UserSession;
+
 
 public class Kiosk extends Activity {
 
@@ -12,6 +14,15 @@ public class Kiosk extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kiosk);
+
+        initKiosk();
+
+        if(savedInstanceState != null){
+
+
+
+        }
+
     }
 
 
@@ -33,4 +44,13 @@ public class Kiosk extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    private void initKiosk(){
+
+        UserSession.getSession().initialize(this);
+
+    }
+
 }
