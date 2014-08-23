@@ -38,5 +38,6 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:+'
     compile 'com.squareup.retrofit:retrofit:1.6.1'
     compile 'com.squareup:otto:+'
+    compile 'com.google.code.gson:gson:2.2.4'
 
 }

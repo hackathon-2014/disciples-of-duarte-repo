@@ -1,14 +1,14 @@
 package com.r0adkll.kiosk;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.r0adkll.kiosk.session.UserSession;
 
 
-public class Kiosk extends Activity {
+public class Kiosk extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

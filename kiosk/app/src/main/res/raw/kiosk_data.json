@@ -1,0 +1,211 @@
+{
+	"locations":[
+		{
+			"id":1,
+			"name":"Bathroom",
+			"beacon":{
+				"mac":"DC:0A:EE:01:28:18",
+				"major":10264,
+				"minor":60929
+			},
+			"range":5.0,
+			"company_id": 1,
+			"company_name": "Globo Gym",
+			"company_icon": "http://r0adkll.com/icons/globo.png"
+		},
+		{
+			"id":2,
+			"name":"Cardio Deck",
+			"beacon":{
+				"mac":"F8:2D:96:9B:41:C2",
+				"major":16834,
+				"minor":38555
+			},
+			"range":15.0,
+			"company_id": 1,
+			"company_name": "Globo Gym",
+			"company_icon": "http://r0adkll.com/icons/globo.png"
+		},
+		{
+			"id":3,
+			"name":"Weight Room",
+			"beacon":{
+				"mac":"FF:F9:72:0A:9C:09",
+				"major":39945,
+				"minor":29194
+			},
+			"range":14.0,
+			"company_id": 1,
+			"company_name": "Globo Gym",
+			"company_icon": "http://r0adkll.com/icons/globo.png"
+		}
+	],
+	"content":[
+		{
+			"id":0,
+			"location_ids":[
+				2
+			],
+			"type":"movie",
+			"name":"Captain America: The Winter Soldier",
+			"url":"http://youtube.com/kjiueiowezxc",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"length":7200,
+				"format":"H.264",
+				"date":"APRIL 2014",
+				"rt_rating":"7.1 out of 10",
+				"imdb_rating":"8 out of 10",
+				"mpaa":"PG-13"
+			}
+		},
+		{
+			"id":1,
+			"location_ids":[
+				2
+			],
+			"type":"movie",
+			"name":"The Amazing Spider-Man 2",
+			"url":"http://youtube.com/kjasdiufdk",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"length":7800,
+				"format":"H.264",
+				"date":"APRIL 2014",
+				"rt_rating":"7.1 out of 10",
+				"imdb_rating":"8 out of 10",
+				"mpaa":"PG-13"
+			}
+		},
+		{
+			"id":2,
+			"location_ids":[
+				2
+			],
+			"type":"movie",
+			"name":"Iron Man 3",
+			"url":"http://youtube.com/kjasdasdfk",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"length":7100,
+				"format":"H.264",
+				"date":"APRIL 2014",
+				"rt_rating":"7.1 out of 10",
+				"imdb_rating":"8 out of 10",
+				"mpaa":"PG-13"
+			}
+		},
+		{
+			"id":3,
+			"location_ids":[
+				2
+			],
+			"type":"tvshow",
+			"name":"How I Met Your Mother",
+			"url":"http://youtube.com/kjasdiufdk",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"length":1800,
+				"format":"H.264",
+				"date":"APRIL 2014",
+				"season": 5,
+				"episode": 14,
+				"v_chip":"TV-14"
+			}
+		},
+		{
+			"id":4,
+			"location_ids":[
+				2
+			],
+			"type":"tvshow",
+			"name":"How I Met Your Mother",
+			"url":"http://youtube.com/kjasdiufdk",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"length":1800,
+				"format":"H.264",
+				"date":"APRIL 2014",
+				"season": 9,
+				"episode": 5,
+				"v_chip":"TV-14"
+			}
+		},
+		{
+			"id":5,
+			"location_ids":[
+				1,
+				2
+			],
+			"type":"magazine",
+			"name":"Wired",
+			"url":"http://wired.com/jan/1239d9",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"format": "epub",
+				"date": "APRIL 2014"
+			}
+		},
+		{
+			"id":6,
+			"location_ids":[
+				1,
+				2
+			],
+			"type":"magazine",
+			"name":"PC Gamer",
+			"url":"http://pcgamer.com/jan/1239d9",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"format": "epub",
+				"date": "APRIL 2014"
+			}
+		},
+		{
+			"id":7,
+			"location_ids":[
+				1,
+				2
+			],
+			"type":"music",
+			"name":"TOP 40",
+			"url":"",
+			"metadata":{
+				"poster": "http://kajsldkjfj.png",
+				"banner": "http://kduiusdkjf.png",
+				"format": "mp3",
+				"date": "APRIL 2014",
+				"tunes":[
+					{
+						"id": 0,
+						"name": "Smoke on the water",
+						"artist": "Something",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 300
+					},
+					{
+						"id": 1,
+						"name": "Fancy",
+						"artist":"Iggy Azalea",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 300
+					},
+					{
+						"id": 0,
+						"name": "Everything is AWESOME!!!",
+						"artist": "Tegan and Sara, The Lonely Island",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 300
+					},
+				]
+			}
+		}
+	]
+}
