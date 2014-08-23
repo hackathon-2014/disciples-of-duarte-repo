@@ -40,7 +40,7 @@ public class ContentListAdapter extends BetterListAdapter<Content> {
 
         holder.mTitle.setText(content.name);
         holder.mInfo.setText(content.getInfoFromMetaData());
-        holder.mDescription.setText(content.description);
+        holder.mDescription.setText(content.summary);
     }
 
 

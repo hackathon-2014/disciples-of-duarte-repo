@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.manuelpeinado.fadingactionbar.FadingActionBarHelper;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -14,59 +12,15 @@ import com.r0adkll.kiosk.R;
 import com.r0adkll.kiosk.session.model.Content;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by r0adkll on 8/23/14.
  */
-public class DetailActivity extends Activity {
+public class MusicDetailActivity extends Activity {
 
-
-    /***************************************************************************************
-     *
-     * Constants
-     *
-     */
-
-    /**
-     * ************************************************************************************
-     * <p/>
-     * Variables
-     */
-    @InjectView(R.id.banner)
-    ImageView mBanner;
-    @InjectView(R.id.title)
-    TextView mTitle;
-    @InjectView(R.id.watch_now)
-    TextView mWatchNow;
-    @InjectView(R.id.short_description)
-    TextView mShortDescription;
-    @InjectView(R.id.info1)
-    TextView mInfo1;
-    @InjectView(R.id.info2)
-    TextView mInfo2;
-    @InjectView(R.id.info3)
-    TextView mInfo3;
-    @InjectView(R.id.info4)
-    TextView mInfo4;
-    @InjectView(R.id.full_description)
-    TextView mFullDescription;
 
     private Content mContent;
     private FadingActionBarHelper mFadingHelper;
-
-    /**
-     * Empty Constructor
-     */
-    public DetailActivity() {}
-
-
-    /**
-     * ************************************************************************************
-     * <p/>
-     * Lifecycle Endpoints
-     */
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -214,11 +168,5 @@ public class DetailActivity extends Activity {
         });
 
     }
-
-    /***************************************************************************************
-     *
-     * Inner classes and interfaces
-     *
-     */
 
 }

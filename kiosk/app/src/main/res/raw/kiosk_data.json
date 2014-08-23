@@ -29,7 +29,6 @@
 			"categories":[
 				"magazines",
 				"movies",
-				"tvshows",
 				"music"
 			],
 			"range":15.0,
@@ -144,14 +143,14 @@
 			"type":"movies",
 			"name":"Noah",
 			"summary":"A man is chosen by his world's creator to undertake a momentous mission before an apocalyptic flood cleanses the world.",
-			"description" : "In Brooklyn, the bankrupted owner of a book store Fioravante is forced to close his family business. His best friend Murray tells that his dermatologist Dr. Parker dreams on having a threesome and would pay a thousand-dollar to have with her friend Selima.\n\nMurray proposes to be Fioravante's gigolo and they start a male prostitution business. When Fioravante meets the Jewish Avigal, who is the widow of a rabbi, they fall in love with each other. But the Jewish Dovi loves Avigal and will make life difficult for Murray.",
-			"url":"https://www.youtube.com/watch?v=4r7lSsLtg3wj",
+			"description" : "Noah is a 2014 American biblically inspired epic directed by Darren Aronofsky, written by Aronofsky and Ari Handel, and based loosely on the story of Noah's Ark. The film stars Russell Crowe as Noah, along with Jennifer Connelly, Ray Winstone, Emma Watson, Logan Lerman, and Anthony Hopkins.\n\nThe film was released in North American theaters on March 28, 2014, in 2D and IMAX, while several countries released a version of the film converted to 3D and IMAX 3D.\n\nNoah received generally positive reviews from critics and grossed over $359 million worldwide.",
+			"url":"https://www.youtube.com/watch?v=6qmj5mhDwJQ",
 			"metadata":{
 				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://www.placecage.com/1000/400",
-				"length":7100,
+				"length":8280,
 				"format":"H.264",
-				"date":"APRIL 2014",
+				"date":"MARCH 2014",
 				"imdb_rating":"6.1 / 10.0",
 				"mpaa":"R"
 			}
@@ -237,35 +236,83 @@
 				3
 			],
 			"type":"music",
-			"name":"TOP 40",
-			"description" : "Some Description here.",
+			"name":"Billboard Top 10",
+			"summary" : "Listen to the week's hottest pop songs, ranked by mainstream top 10 radio airplay detections as measured by Nielsen BDS.",
 			"url":"",
 			"metadata":{
 				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://www.placecage.com/1000/400",
 				"format": "mp3",
-				"date": "APRIL 2014",
 				"tunes":[
 					{
 						"id": 0,
-						"name": "Smoke on the water",
-						"artist": "Something",
+						"name": "Stay With Me",
+						"artist": "Sam Smith",
 						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
-						"length": 300
+						"length": 173
 					},
 					{
 						"id": 1,
 						"name": "Fancy",
 						"artist":"Iggy Azalea",
 						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
-						"length": 300
+						"length": 200
+					},
+					{
+						"id": 1,
+						"name": "Rude",
+						"artist":"MAGIC!",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 241
+					},
+					{
+						"id": 1,
+						"name": "Latch",
+						"artist":"Disclosure feat. Sam Smith",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 159
+					},
+					{
+						"id": 1,
+						"name": "Am I Wrong",
+						"artist":"Nico & Vinz",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 192
+					},
+					{
+						"id": 1,
+						"name": "Really Don't Care",
+						"artist":"Demi Lovato feat. Cher Lloyd",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 174
+					},
+					{
+						"id": 1,
+						"name": "Problem",
+						"artist":"Ariana Grande feat. Iggy Azalea",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 137
+					},
+					{
+						"id": 1,
+						"name": "Break Free",
+						"artist":"Ariana Grande feat. Zedd",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 148
+					},
+					{
+						"id": 1,
+						"name": "Rather Be",
+						"artist":"Clean Bandit feat. Jess Glynne",
+						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"length": 182
 					},
 					{
 						"id": 0,
-						"name": "Everything is AWESOME!!!",
-						"artist": "Tegan and Sara, The Lonely Island",
+						"name": "Maps",
+						"artist": "Maroon 5",
 						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
-						"length": 300
+						"length": 290
 					}
 				]
 			}
