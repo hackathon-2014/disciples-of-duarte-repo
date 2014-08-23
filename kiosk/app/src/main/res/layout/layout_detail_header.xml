@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    
+    <ImageView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/banner"
+        android:background="@color/black30"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_margin"
+
+            android:text="Captain America: The Winter Soldier"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/watch_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="WATCH NOW"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+
+            android:background="@color/red_500"
+            android:padding="8dp"
+            android:layout_marginRight="@dimen/default_margin"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

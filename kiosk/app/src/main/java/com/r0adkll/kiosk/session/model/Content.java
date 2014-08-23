@@ -1,7 +1,12 @@
 package com.r0adkll.kiosk.session.model;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,11 +14,11 @@ import java.util.Set;
  * Created by r0adkll on 8/23/14.
  *
  */
-public class Content {
+public class Content implements Parcelable{
 
-    public static final String MOVIE = "movie";
-    public static final String TVSHOW = "tvshow";
-    public static final String MAGAZINE = "magazine";
+    public static final String MOVIE = "movies";
+    public static final String TVSHOW = "tvshows";
+    public static final String MAGAZINE = "magazines";
     public static final String MUSIC = "music";
 
     public long id;
@@ -49,6 +54,20 @@ public class Content {
         metadata = json.optJSONObject("metadata");
     }
 
+    public Content(Parcel in){
+        id = in.readLong();
+        type = in.readString();
+        locationIds = new HashSet<>(Arrays.asList((Long[]) in.readArray(null)));
+        url = in.readString();
+        name = in.readString();
+        description = in.readString();
+        try {
+            metadata = new JSONObject(in.readString());
+        } catch (JSONException e) {
+            metadata = new JSONObject();
+        }
+    }
+
     public String getInfoFromMetaData(){
         switch (type){
             case MOVIE:
@@ -78,4 +97,31 @@ public class Content {
         return "";
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(type);
+        dest.writeArray(locationIds.toArray());
+        dest.writeString(url);
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeString(metadata.toString());
+    }
+
+    public static final Creator<Content> CREATOR = new Creator<Content>() {
+        @Override
+        public Content createFromParcel(Parcel source) {
+            return new Content(source);
+        }
+
+        @Override
+        public Content[] newArray(int size) {
+            return new Content[size];
+        }
+    };
 }

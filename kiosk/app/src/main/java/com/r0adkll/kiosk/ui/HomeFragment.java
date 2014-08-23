@@ -196,7 +196,6 @@ public class HomeFragment extends Fragment {
 
     }
 
-
     class CategoryPagerAdapter extends FragmentPagerAdapter {
 
         private Location location;
