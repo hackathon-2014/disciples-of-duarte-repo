@@ -11,6 +11,12 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
     buildTypes {
         release {
             runProguard false
@@ -31,5 +37,6 @@ dependencies {
 
     compile 'com.squareup.okhttp:okhttp:+'
     compile 'com.squareup.retrofit:retrofit:1.6.1'
+    compile 'com.squareup:otto:+'
 
 }

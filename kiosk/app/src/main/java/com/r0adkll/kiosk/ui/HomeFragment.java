@@ -2,14 +2,20 @@ package com.r0adkll.kiosk.ui;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
+import android.widget.TabHost;
+
+import com.r0adkll.kiosk.R;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 /**
  * Created by r0adkll on 8/23/14.
@@ -24,11 +30,11 @@ public class HomeFragment extends Fragment {
 
     /**
      * Create a new instance of this fragment
-     * @return      the newly created instance
+     *
+     * @return the newly created instance
      */
-    public static HomeFragment createInstance(){
+    public static HomeFragment createInstance() {
         HomeFragment frag = new HomeFragment();
-
         return frag;
     }
 
@@ -44,12 +50,22 @@ public class HomeFragment extends Fragment {
      *
      */
 
+    @InjectView(R.id.tab_scroller)
+    HorizontalScrollView mTabScroller;
+    @InjectView(R.id.viewpager)
+    ViewPager mViewpager;
+    @InjectView(R.id.tabhost)
+    TabHost mTabhost;
+
+
+
     /**
      * Empty Constructor
      */
-    public HomeFragment(){}
+    public HomeFragment() {
+    }
 
-    /***************************************************************************************
+    /**************************************************************************************
      *
      * Lifecycle Endpoints
      *
@@ -71,7 +87,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View layout = inflater.inflate(0, container, false);
+        View layout = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.inject(this, layout);
         return layout;
     }
@@ -96,6 +112,12 @@ public class HomeFragment extends Fragment {
         super.onPause();
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.reset(this);
+    }
+
     /***************************************************************************************
      *
      * Helper Endpoints
@@ -105,10 +127,17 @@ public class HomeFragment extends Fragment {
     /**
      * Initialize the fragment's views
      */
-    private void initViews(){
+    private void initViews() {
+
+        initTabs();
+
+    }
+
+    private void initTabs(){
+
+        mTabhost.setup();
 
 
 
     }
-
 }
