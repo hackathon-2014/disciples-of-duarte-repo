@@ -61,12 +61,12 @@
 			"location_ids":[
 				2
 			],
-			"type":"movie",
+			"type":"movies",
 			"name":"Captain America: The Winter Soldier",
 			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjiueiowezxc",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"length":7200,
 				"format":"H.264",
@@ -81,12 +81,12 @@
 			"location_ids":[
 				2
 			],
-			"type":"movie",
+			"type":"movies",
 			"name":"The Amazing Spider-Man 2",
 			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdiufdk",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"length":7800,
 				"format":"H.264",
@@ -101,12 +101,12 @@
 			"location_ids":[
 				2
 			],
-			"type":"movie",
+			"type":"movies",
 			"name":"Iron Man 3",
 			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdasdfk",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"length":7100,
 				"format":"H.264",
@@ -121,12 +121,12 @@
 			"location_ids":[
 				2
 			],
-			"type":"tvshow",
+			"type":"tvshows",
 			"name":"How I Met Your Mother",
 			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdiufdk",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"length":1800,
 				"format":"H.264",
@@ -141,12 +141,12 @@
 			"location_ids":[
 				2
 			],
-			"type":"tvshow",
+			"type":"tvshows",
 			"name":"How I Met Your Mother",
 			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdiufdk",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"length":1800,
 				"format":"H.264",
@@ -162,12 +162,12 @@
 				1,
 				2
 			],
-			"type":"magazine",
+			"type":"magazines",
 			"name":"Wired",
 			"description" : "Some Description here.",
 			"url":"http://wired.com/jan/1239d9",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"format": "epub",
 				"date": "APRIL 2014"
@@ -179,12 +179,12 @@
 				1,
 				2
 			],
-			"type":"magazine",
+			"type":"magazines",
 			"name":"PC Gamer",
 			"description" : "Some Description here.",
 			"url":"http://pcgamer.com/jan/1239d9",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"format": "epub",
 				"date": "APRIL 2014"
@@ -201,7 +201,7 @@
 			"description" : "Some Description here.",
 			"url":"",
 			"metadata":{
-				"poster": "http://kajsldkjfj.png",
+				"poster": "http://www.placecage.com/200/300",
 				"banner": "http://kduiusdkjf.png",
 				"format": "mp3",
 				"date": "APRIL 2014",

@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.r0adkll.deadskunk.adapters.BetterListAdapter;
 import com.r0adkll.kiosk.R;
 import com.r0adkll.kiosk.session.model.Content;
@@ -34,11 +35,12 @@ public class ContentListAdapter extends BetterListAdapter<Content> {
     public void bindHolder(ViewHolder viewHolder, int i, Content content) {
         ContentViewHolder holder = (ContentViewHolder) viewHolder;
 
+        // Load poster from url
+        ImageLoader.getInstance().displayImage(content.metadata.optString("poster"), holder.mPoster);
+
         holder.mTitle.setText(content.name);
-        holder.mInfo.setText(content.type);
-        holder.mDescription.setText(content.);
-
-
+        holder.mInfo.setText(content.getInfoFromMetaData());
+        holder.mDescription.setText(content.description);
     }
 
 

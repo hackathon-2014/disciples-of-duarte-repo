@@ -139,12 +139,17 @@ public class HomeFragment extends Fragment {
      */
     private void initViews() {
 
+        Location test = UserSession.getSession().getLocation(2);
+        configureLocation(test);
+
     }
 
     private void configureLocation(Location location) {
         mCurrentLocation = location;
 
-        mTabhost.clearAllTabs();
+        if(mTabhost.getTabWidget() != null)
+            mTabhost.clearAllTabs();
+
         mTabhost.setup();
 
         // Iterate through location categories and determine the tabs to setup
@@ -298,6 +303,9 @@ public class HomeFragment extends Fragment {
         @Override
         public void onResume() {
             super.onResume();
+
+            loadData();
+
         }
 
         @Override

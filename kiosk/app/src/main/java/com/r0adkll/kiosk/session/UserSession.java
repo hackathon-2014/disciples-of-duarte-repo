@@ -102,7 +102,6 @@ public class UserSession {
 
     }
 
-
     /**********************************************************
      *
      *
@@ -132,6 +131,7 @@ public class UserSession {
             }
 
             // parse content
+            mContent = new ArrayList<>();
             JSONArray contents = json.optJSONArray("content");
             int N2 = contents.length();
             for(int i=0; i<N2; i++){

@@ -32,12 +32,12 @@ public class Location {
         companyIcon = json.optString("company_icon");
         range = (float) json.optDouble("range");
 
-        JSONObject beaconJson = json.optJSONObject("beacon");
-        String proxUUID = beaconJson.optString("uuid");
-        String mac_addr = beaconJson.optString("mac");
-        int major = beaconJson.optInt("major");
-        int minor = beaconJson.optInt("minor");
-        beacon = new Beacon(proxUUID, "", mac_addr, major, minor, 0, 0);
+//        JSONObject beaconJson = json.optJSONObject("beacon");
+//        String proxUUID = beaconJson.optString("uuid");
+//        String mac_addr = beaconJson.optString("mac");
+//        int major = beaconJson.optInt("major");
+//        int minor = beaconJson.optInt("minor");
+//        beacon = new Beacon(proxUUID, "", mac_addr, major, minor, 0, 0);
 
         JSONArray cats = json.optJSONArray("categories");
         int N = cats.length();

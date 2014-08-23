@@ -18,7 +18,7 @@ public class Kiosk extends FragmentActivity {
 
         initKiosk();
 
-        if(savedInstanceState != null){
+        if(savedInstanceState == null){
 
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.container, HomeFragment.createInstance())
