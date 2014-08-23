@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.r0adkll.kiosk.session.UserSession;
+import com.r0adkll.kiosk.ui.HomeFragment;
 
 
 public class Kiosk extends FragmentActivity {
@@ -19,7 +20,9 @@ public class Kiosk extends FragmentActivity {
 
         if(savedInstanceState != null){
 
-
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, HomeFragment.createInstance())
+                    .commit();
 
         }
 
@@ -39,9 +42,7 @@ public class Kiosk extends FragmentActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
     }
 

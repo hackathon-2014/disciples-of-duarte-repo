@@ -22,8 +22,12 @@ import java.io.InputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import timber.log.Timber;
 
 /**
  * Created by r0adkll on 8/23/14.
@@ -73,7 +77,7 @@ public class UserSession {
     private SharedPreferences mDefaultPrefs;
 
     private HashMap<Long, Location> mLocations = new HashMap<>();
-    private HashMap<Long, Content> mContent = new HashMap<>();
+    private List<Content> mContent = new ArrayList<>();
 
 
     /**********************************************************
@@ -92,11 +96,17 @@ public class UserSession {
         mSecPrefs = new SecurePreferences(ctx, PREFERENCE_SECURE_NAME, SAUCE, FLAVOR, true);
         mGenPrefs = ctx.getSharedPreferences(PREFERENCE_GENERIC_NAME, Context.MODE_PRIVATE);
         mDefaultPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+
+        // Load kiosk data
+        loadKioskData(ctx);
+
     }
 
 
     /**********************************************************
      *
+     *
+     * LOCAL STORE MODE
      * Data Loading Methods
      *
      */
@@ -127,11 +137,10 @@ public class UserSession {
             for(int i=0; i<N2; i++){
                 JSONObject content = contents.optJSONObject(i);
                 Content newContent = new Content(content);
-                mContent.put(newContent.id, newContent);
+                mContent.add(newContent);
             }
 
-
-
+            Timber.i("Kiosk Data loaded [%d][%d]", mLocations.size(), mContent.size());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -141,26 +150,41 @@ public class UserSession {
 
     }
 
-    /**
-     * Make request to API to get the Location identifier for a given beacon
-     *
-     * @param beacon        the beacon to request with
-     * @param handler       the callback response handler
-     */
-    public void getLocationForBeacon(Beacon beacon, APIHandler<Location> handler){
-
-        Map<String, Object> params = new HashMap<>();
-        Map<String, Object> bcon = new HashMap<>();
-        bcon.put("mac", beacon.getMacAddress());
-        bcon.put("major", beacon.getMajor());
-        bcon.put("minor", beacon.getMinor());
-        params.put("beacon", bcon);
-
-        String jsonRequest = GSON.toJson(params);
-
-        // Make Request
-
+    public Location getLocation(long id){
+        return mLocations.get(id);
     }
 
+    public void getLocation(Beacon beacon, APIHandler<Location> handler){
+
+        // Iterate through locations
+        for(Location loc: mLocations.values()){
+            Beacon locBeac = loc.beacon;
+            if(locBeac.getMacAddress().equals(beacon.getMacAddress()) &&
+                    locBeac.getProximityUUID().equals(beacon.getProximityUUID()) &&
+                    locBeac.getMajor() == beacon.getMajor() &&
+                    locBeac.getMinor() == beacon.getMinor()){
+
+                handler.onSuccess(loc);
+                return;
+            }
+
+        }
+
+        handler.onFailure(null, -1, "Can't find Location");
+    }
+
+    public void getContent(long locationId, String category, APIHandler<List<Content>> handler){
+        List<Content> content = new ArrayList<>();
+        for(Content c: mContent){
+            if(c.locationIds.contains(locationId)){
+                if(category != null && !category.equals(c.type)) continue;
+
+                content.add(c);
+
+            }
+        }
+
+        handler.onSuccess(content);
+    }
 
 }

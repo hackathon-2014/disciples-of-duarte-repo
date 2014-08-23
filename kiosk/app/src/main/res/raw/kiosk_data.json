@@ -7,8 +7,11 @@
 				"uuid":"someuuid",
 				"mac":"DC:0A:EE:01:28:18",
 				"major":10264,
-				"minor":60929,
+				"minor":60929
 			},
+			"categories":[
+				"magazines"
+			],
 			"range":5.0,
 			"company_id": 1,
 			"company_name": "Globo Gym",
@@ -23,6 +26,12 @@
 				"major":16834,
 				"minor":38555
 			},
+			"categories":[
+				"magazines",
+				"movies",
+				"tvshows",
+				"music"
+			],
 			"range":15.0,
 			"company_id": 1,
 			"company_name": "Globo Gym",
@@ -37,6 +46,9 @@
 				"major":39945,
 				"minor":29194
 			},
+			"categories":[
+				"music"
+			],
 			"range":14.0,
 			"company_id": 1,
 			"company_name": "Globo Gym",
@@ -51,6 +63,7 @@
 			],
 			"type":"movie",
 			"name":"Captain America: The Winter Soldier",
+			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjiueiowezxc",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
@@ -70,6 +83,7 @@
 			],
 			"type":"movie",
 			"name":"The Amazing Spider-Man 2",
+			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdiufdk",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
@@ -89,6 +103,7 @@
 			],
 			"type":"movie",
 			"name":"Iron Man 3",
+			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdasdfk",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
@@ -108,6 +123,7 @@
 			],
 			"type":"tvshow",
 			"name":"How I Met Your Mother",
+			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdiufdk",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
@@ -127,6 +143,7 @@
 			],
 			"type":"tvshow",
 			"name":"How I Met Your Mother",
+			"description" : "Some Description here.",
 			"url":"http://youtube.com/kjasdiufdk",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
@@ -147,6 +164,7 @@
 			],
 			"type":"magazine",
 			"name":"Wired",
+			"description" : "Some Description here.",
 			"url":"http://wired.com/jan/1239d9",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
@@ -163,6 +181,7 @@
 			],
 			"type":"magazine",
 			"name":"PC Gamer",
+			"description" : "Some Description here.",
 			"url":"http://pcgamer.com/jan/1239d9",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
@@ -174,11 +193,12 @@
 		{
 			"id":7,
 			"location_ids":[
-				1,
-				2
+				2,
+				3
 			],
 			"type":"music",
 			"name":"TOP 40",
+			"description" : "Some Description here.",
 			"url":"",
 			"metadata":{
 				"poster": "http://kajsldkjfj.png",
