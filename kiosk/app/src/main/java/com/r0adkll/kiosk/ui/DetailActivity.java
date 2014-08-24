@@ -214,9 +214,7 @@ public class DetailActivity extends Activity {
                 switch (mContent.type){
                     case Content.MOVIE:
 
-                        Intent movie = new Intent(Intent.ACTION_VIEW);
-                        movie.setDataAndType(Uri.parse(mContent.url), "video/*");
-                        startActivity(movie);
+                        Intent movie = new Intent(Intent.ACTION_VIEW, Uri.parse(mContent.url));
 
                         break;
                     case Content.MAGAZINE:
