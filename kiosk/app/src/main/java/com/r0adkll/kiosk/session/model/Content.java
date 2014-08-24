@@ -110,6 +110,30 @@ public class Content implements Parcelable{
         return "";
     }
 
+    public String getBannerUri(){
+        switch (type){
+            case MOVIE:
+                return "assets://movies/" + metadata.optString("banner");
+            case MAGAZINE:
+                return "assets://books/" + metadata.optString("banner");
+            case MUSIC:
+                return "assets://music/" + metadata.optString("banner");
+        }
+        return "";
+    }
+
+    public String getPosterUri(){
+        switch (type){
+            case MOVIE:
+                return "assets://movies/" + metadata.optString("poster");
+            case MAGAZINE:
+                return "assets://books/" + metadata.optString("poster");
+            case MUSIC:
+                return "assets://music/" + metadata.optString("poster");
+        }
+        return "";
+    }
+
     @Override
     public int describeContents() {
         return 0;

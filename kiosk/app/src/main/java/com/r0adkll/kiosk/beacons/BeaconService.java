@@ -159,6 +159,8 @@ public class BeaconService extends Service implements BeaconManager.RangingListe
             }
 
         }else{
+            mCurrentFight = null;
+            mActiveBeacon = null;
             DoubleDecker.getBus().post(new ActiveBeacon(null));
         }
 

@@ -36,7 +36,7 @@ public class ContentListAdapter extends BetterListAdapter<Content> {
         ContentViewHolder holder = (ContentViewHolder) viewHolder;
 
         // Load poster from url
-        ImageLoader.getInstance().displayImage(content.metadata.optString("poster"), holder.mPoster);
+        ImageLoader.getInstance().displayImage(content.getPosterUri(), holder.mPoster);
 
         holder.mTitle.setText(content.name);
         holder.mInfo.setText(content.getInfoFromMetaData());

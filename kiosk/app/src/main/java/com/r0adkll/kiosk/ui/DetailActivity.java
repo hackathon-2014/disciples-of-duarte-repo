@@ -149,7 +149,7 @@ public class DetailActivity extends Activity {
         mShortDescription.setText(mContent.summary);
         mFullDescription.setText(mContent.description);
 
-        ImageLoader.getInstance().displayImage(mContent.metadata.optString("banner"), mBanner);
+        ImageLoader.getInstance().displayImage(mContent.getBannerUri(), mBanner);
 
         // Fill out the info section from meta-data
         switch (mContent.type){
