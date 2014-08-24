@@ -215,6 +215,7 @@ public class DetailActivity extends Activity {
                     case Content.MOVIE:
 
                         Intent movie = new Intent(Intent.ACTION_VIEW, Uri.parse(mContent.url));
+                        startActivity(movie);
 
                         break;
                     case Content.MAGAZINE:
