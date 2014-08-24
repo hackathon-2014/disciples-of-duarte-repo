@@ -14,21 +14,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
 
 import com.r0adkll.kiosk.R;
 import com.r0adkll.kiosk.adapters.ContentListAdapter;
 import com.r0adkll.kiosk.session.APIHandler;
 import com.r0adkll.kiosk.session.UserSession;
+import com.r0adkll.kiosk.session.model.ActiveBeacon;
 import com.r0adkll.kiosk.session.model.Content;
 import com.r0adkll.kiosk.session.model.Location;
+import com.r0adkll.kiosk.util.DoubleDecker;
 import com.r0adkll.kiosk.util.TabFactory;
+import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import timber.log.Timber;
 
 /**
  * Created by r0adkll on 8/23/14.
@@ -67,6 +72,8 @@ public class HomeFragment extends Fragment {
     ViewPager mViewpager;
     @InjectView(R.id.tabhost)
     TabHost mTabhost;
+    @InjectView(R.id.empty_layout)
+    RelativeLayout mEmptyLayout;
 
     private Location mCurrentLocation;
 
@@ -117,17 +124,49 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        DoubleDecker.getBus().register(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        DoubleDecker.getBus().unregister(this);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.reset(this);
+    }
+
+    @Subscribe
+    public void onBeaconEvent(ActiveBeacon beacon){
+        Timber.i("Beacon event received!");
+
+        if(beacon.beacon != null) {
+
+            // Received beacon, configure tabs
+            UserSession.getSession().getLocation(beacon.beacon, new APIHandler<Location>() {
+                @Override
+                public void onSuccess(Location data) {
+                    Timber.i("Configuration location and tabs on Homescreen");
+                    configureLocation(data);
+                }
+
+                @Override
+                public void onFailure(Throwable err, int code, String message) {
+
+                }
+            });
+
+        }else{
+            if(mTabhost.getTabWidget() != null){
+                mTabhost.clearAllTabs();
+                mEmptyLayout.setVisibility(View.VISIBLE);
+                mViewpager.setAdapter(null);
+            }
+        }
+
     }
 
     /***************************************************************************************
@@ -141,12 +180,10 @@ public class HomeFragment extends Fragment {
      */
     private void initViews() {
 
-        Location test = UserSession.getSession().getLocation(2);
-        configureLocation(test);
-
     }
 
     private void configureLocation(Location location) {
+        mEmptyLayout.setVisibility(View.GONE);
         mCurrentLocation = location;
 
         if(mTabhost.getTabWidget() != null)

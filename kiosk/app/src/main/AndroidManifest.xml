@@ -33,6 +33,8 @@
             android:theme="@style/Theme.Hyper"
             />
 
+        <service android:name=".beacons.BeaconService" />
+
         <service android:name="com.estimote.sdk.service.BeaconService"
             android:exported="false"/>
 

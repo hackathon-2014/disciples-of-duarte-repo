@@ -1,10 +1,12 @@
 package com.r0adkll.kiosk;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.r0adkll.kiosk.beacons.BeaconService;
 import com.r0adkll.kiosk.session.UserSession;
 import com.r0adkll.kiosk.ui.HomeFragment;
 
@@ -52,6 +54,11 @@ public class Kiosk extends FragmentActivity {
     private void initKiosk(){
 
         UserSession.getSession().initialize(this);
+
+        // Launch the ranging service
+        Intent beaconService = new Intent(this, BeaconService.class);
+        startService(beaconService);
+
 
     }
 
