@@ -1,6 +1,8 @@
 package com.r0adkll.kiosk.ui;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -209,7 +211,22 @@ public class DetailActivity extends Activity {
         mWatchNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                switch (mContent.type){
+                    case Content.MOVIE:
 
+                        Intent movie = new Intent(Intent.ACTION_VIEW);
+                        movie.setDataAndType(Uri.parse(mContent.url), "video/*");
+                        startActivity(movie);
+
+                        break;
+                    case Content.MAGAZINE:
+
+                        Intent mag = new Intent(Intent.ACTION_VIEW);
+                        mag.setDataAndType(Uri.parse("assets://books/" + mContent.url), "application/pdf");
+                        startActivity(mag);
+
+                        break;
+                }
             }
         });
 
