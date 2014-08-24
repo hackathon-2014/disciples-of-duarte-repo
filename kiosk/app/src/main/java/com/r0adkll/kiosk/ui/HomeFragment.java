@@ -164,6 +164,7 @@ public class HomeFragment extends Fragment {
                 mTabhost.clearAllTabs();
                 mEmptyLayout.setVisibility(View.VISIBLE);
                 mViewpager.setAdapter(null);
+                getActivity().getActionBar().setTitle(R.string.app_name);
             }
         }
 
@@ -185,6 +186,7 @@ public class HomeFragment extends Fragment {
     private void configureLocation(Location location) {
         mEmptyLayout.setVisibility(View.GONE);
         mCurrentLocation = location;
+        getActivity().getActionBar().setTitle("Hyper: " + location.name);
 
         if(mTabhost.getTabWidget() != null)
             mTabhost.clearAllTabs();

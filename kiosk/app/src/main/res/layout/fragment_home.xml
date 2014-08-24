@@ -47,8 +47,8 @@
             android:gravity="center"
 
             android:text="You are currently not\nin range of any locations"
-            android:textSize="20sp"
-            android:textColor="@color/grey_600"
+            android:textSize="22sp"
+            android:textColor="#777"
 
 
             />

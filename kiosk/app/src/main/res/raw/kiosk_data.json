@@ -4,7 +4,6 @@
 			"id":1,
 			"name":"Bathroom",
 			"beacon":{
-				"uuid":"someuuid",
 				"mac":"DC:0A:EE:01:28:18",
 				"major":10264,
 				"minor":60929
@@ -21,7 +20,6 @@
 			"id":2,
 			"name":"Cardio Deck",
 			"beacon":{
-				"uuid":"someuuid",
 				"mac":"F8:2D:96:9B:41:C2",
 				"major":16834,
 				"minor":38555
@@ -40,7 +38,6 @@
 			"id":3,
 			"name":"Weight Room",
 			"beacon":{
-				"uuid":"someuuid",
 				"mac":"FF:F9:72:0A:9C:09",
 				"major":39945,
 				"minor":29194
@@ -66,8 +63,8 @@
 			"description" : "For Steve Rogers, awakening after decades of suspended animation involves more than catching up on pop culture; it also means that this old school idealist must face a world of subtler threats and difficult moral complexities.\n\nThat comes clear when Director Nick Fury is killed by the mysterious assassin, the Winter Soldier, but not before warning Rogers that SHIELD has been subverted by its enemies. When Rogers acts on Fury's warning to trust no one there, he is branded as a traitor by the organization. Now a fugitive, Captain America must get to the bottom of this deadly mystery with the help of the Black Widow and his new friend, The Falcon.\n\nHowever, the battle will be costly for the Sentinel of Liberty, with Rogers finding enemies where he least expects them while learning that the Winter Soldier looks disturbingly familiar.",
 			"url":"https://www.youtube.com/watch?v=7SlILk2WMTI",
 			"metadata":{
-				"poster": "http://placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
+				"poster": "captainamerica_poster.png",
+				"banner": "captainamerica_banner.png",
 				"length":8160,
 				"format":"H.264",
 				"date":"APRIL 2014",
@@ -86,8 +83,8 @@
 			"description" : "From the producer who brought you The Woman In Black and Let Me In comes the unnerving tale of The Quiet Ones. Tucked away in an estate outside of London, Professor Coupland along with a team of university students conduct an “experiment” on Jane Harper, a young girl who harbors unspeakable secrets.\n\nWhat dark forces they uncover are more terrifying than any of them expected. Inspired by true events, the film stars Jared Harris (Mad Men and Sherlock Homes: A Game of Shadows), Sam Claflin (The Hunger Games: Catching Fire), Olivia Cooke (Bates Motel), and is directed by John Pogue from a screenplay by Craig Rosenberg and Oren Moverman and John Pogue, and based on a screenplay by Tom de Ville",
 			"url":"https://www.youtube.com/watch?v=70fq90qn-k8",
 			"metadata":{
-				"poster": "http://placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
+				"poster": "quietones_poster.png",
+				"banner": "quietones_banner.png",
 				"length":5880,
 				"format":"H.264",
 				"date":"APRIL 2014",
@@ -106,8 +103,8 @@
 			"description" : "We've always known that Spider-Man's most important conflict has been within himself: the struggle between the ordinary obligations of Peter Parker and the extraordinary responsibilities of Spider-Man. But in The Amazing Spider-Man 2, Peter Parker finds that his greatest battle is about to begin. It's great to be Spider-Man.\n\nFor Peter Parker, there's no feeling quite like swinging between skyscrapers, embracing being the hero, and spending time with Gwen. But being Spider-Man comes at a price: only Spider-Man can protect his fellow New Yorkers from the formidable villains that threaten the city. With the emergence of Electro, Peter must confront a foe far more powerful than he.\n\nAnd as his old friend, Harry Osborn, returns, Peter comes to realize that all of his enemies have one thing in common: Oscorp.",
 			"url":"https://www.youtube.com/watch?v=nbp3Ra3Yp74",
 			"metadata":{
-				"poster": "http://www.placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
+				"poster": "spiderman_poster.png",
+				"banner": "spiderman_banner.png",
 				"length":8520,
 				"format":"H.264",
 				"date":"MAY 2014",
@@ -126,8 +123,8 @@
 			"description" : "In Brooklyn, the bankrupted owner of a book store Fioravante is forced to close his family business. His best friend Murray tells that his dermatologist Dr. Parker dreams on having a threesome and would pay a thousand-dollar to have with her friend Selima.\n\nMurray proposes to be Fioravante's gigolo and they start a male prostitution business. When Fioravante meets the Jewish Avigal, who is the widow of a rabbi, they fall in love with each other. But the Jewish Dovi loves Avigal and will make life difficult for Murray.",
 			"url":"https://www.youtube.com/watch?v=4r7lSsLtg3wj",
 			"metadata":{
-				"poster": "http://www.placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
+				"poster": "fadinggigolo_poster.png",
+				"banner": "fadinggigolo_banner.png",
 				"length":7100,
 				"format":"H.264",
 				"date":"APRIL 2014",
@@ -146,8 +143,8 @@
 			"description" : "Noah is a 2014 American biblically inspired epic directed by Darren Aronofsky, written by Aronofsky and Ari Handel, and based loosely on the story of Noah's Ark. The film stars Russell Crowe as Noah, along with Jennifer Connelly, Ray Winstone, Emma Watson, Logan Lerman, and Anthony Hopkins.\n\nThe film was released in North American theaters on March 28, 2014, in 2D and IMAX, while several countries released a version of the film converted to 3D and IMAX 3D.\n\nNoah received generally positive reviews from critics and grossed over $359 million worldwide.",
 			"url":"https://www.youtube.com/watch?v=6qmj5mhDwJQ",
 			"metadata":{
-				"poster": "http://www.placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
+				"poster": "noah_poster.png",
+				"banner": "noah_banner.png",
 				"length":8280,
 				"format":"H.264",
 				"date":"MARCH 2014",
@@ -198,35 +195,61 @@
 		{
 			"id":5,
 			"location_ids":[
-				1,
 				2
 			],
 			"type":"magazines",
-			"name":"Wired",
-			"description" : "Some Description here.",
-			"url":"http://wired.com/jan/1239d9",
+			"name":"Fifty Shades of Grey",
+			"summary" : "When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating.",
+			"description":"The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.\n\nShocked yet thrilled by Grey’s singular erotic tastes, Ana hesitates. For all the trappings of success—his multinational businesses, his vast wealth, his loving family—Grey is a man tormented by demons and consumed by the need to control. When the couple embarks on a daring, passionately physical affair, Ana discovers Christian Grey’s secrets and explores her own dark desires.\n\nErotic, amusing, and deeply moving, the Fifty Shades Trilogy is a tale that will obsess you, possess you, and stay with you forever.",
+			"url":"fiftyshades.pdf",
 			"metadata":{
-				"poster": "http://www.placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
-				"format": "epub",
-				"date": "APRIL 2014"
+				"poster": "fiftyshades_square.png",
+				"banner": "fiftyshades_banner.png",
+				"format": "pdf",
+				"date": "APRIL 2012",
+				"author": "E.L. JAMES",
+				"length": "514 PAGES",
+				"rating": "3.4 / 5.0"
 			}
 		},
 		{
-			"id":6,
+			"id":5,
 			"location_ids":[
-				1,
+				1
+			],
+			"type":"magazines",
+			"name":"Everyone Poops",
+			"summary" : "Okay, so everyone does it—does everyone have to talk about it? True, kids at a certain stage of development may find the subject riveting—but their parents may well not want to read to them about it.",
+			"description":"Okay, so everyone does it—does everyone have to talk about it? True, kids at a certain stage of development may find the subject riveting—but their parents may well not want to read to them about it. Here we learn that birds do it, bees do it, kids with bended knees do it.\n\nWe are told about big poop and little poop, animals that poop while moving and animals that poop from a stationary position, why and where people poop—in short, we get the scoop on poop. The pictures, far from Gomi's best work, leave nothing to the imagination either. In case the message hasn't sunk in, the final spread presents a chorus line of creatures, backsides forward, each producing poop.\n\nCall it what you will, by euphemism or by expletive, poop by any name seems an unsuitable picture book subject--a view not helped by this artless presentation.",
+			"url":"everyonepoops.pdf",
+			"metadata":{
+				"poster": "everyonepoops_square.png",
+				"banner": "everyonepoops_banner.png",
+				"format": "pdf",
+				"date": "OCTOBOR 2001",
+				"author": "TARO GOMI",
+				"length": "27 PAGES",
+				"rating": "4.4 / 5.0"
+			}
+		},
+		{
+			"id":5,
+			"location_ids":[
 				2
 			],
 			"type":"magazines",
-			"name":"PC Gamer",
-			"description" : "Some Description here.",
-			"url":"http://pcgamer.com/jan/1239d9",
+			"name":"Gone Girl",
+			"summary" : "On a warm summer morning in North Carthage, Missouri, Nick’s Dunne's clever and beautiful wife disappears.",
+			"description":"On a warm summer morning in North Carthage, Missouri, it is Nick and Amy Dunne’s fifth wedding anniversary. Presents are being wrapped and reservations are being made when Nick’s clever and beautiful wife disappears. Husband-of-the-Year Nick isn’t doing himself any favors with cringe-worthy daydreams about the slope and shape of his wife’s head, but passages from Amy's diary reveal the alpha-girl perfectionist could have put anyone dangerously on edge.\n\nUnder mounting pressure from the police and the media—as well as Amy’s fiercely doting parents—the town golden boy parades an endless series of lies, deceits, and inappropriate behavior. Nick is oddly evasive, and he’s definitely bitter—but is he really a killer?",
+			"url":"gonegirl.pdf",
 			"metadata":{
-				"poster": "http://www.placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
-				"format": "epub",
-				"date": "APRIL 2014"
+				"poster": "gonegirl_square.png",
+				"banner": "gonegirl_banner.png",
+				"format": "pdf",
+				"date": "APRIL 2014",
+				"author": "GILLIAN FLYNN",
+				"length": "432 PAGES",
+				"rating": "3.8 / 5.0"
 			}
 		},
 		{
@@ -240,78 +263,78 @@
 			"summary" : "Listen to the week's hottest pop songs, ranked by mainstream top 10 radio airplay detections as measured by Nielsen BDS.",
 			"url":"",
 			"metadata":{
-				"poster": "http://www.placecage.com/200/300",
-				"banner": "http://www.placecage.com/1000/400",
+				"poster": "billboard_square.png",
+				"banner": "billboard_banner.png",
 				"format": "mp3",
 				"tunes":[
 					{
 						"id": 0,
 						"name": "Stay With Me",
 						"artist": "Sam Smith",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "staywithme.mp3",
 						"length": 173
 					},
 					{
 						"id": 1,
 						"name": "Fancy",
 						"artist":"Iggy Azalea",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "fancy.mp3",
 						"length": 200
 					},
 					{
 						"id": 1,
 						"name": "Rude",
 						"artist":"MAGIC!",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "rude.mp3",
 						"length": 241
 					},
 					{
 						"id": 1,
 						"name": "Latch",
 						"artist":"Disclosure feat. Sam Smith",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "latch.mp3",
 						"length": 159
 					},
 					{
 						"id": 1,
 						"name": "Am I Wrong",
 						"artist":"Nico & Vinz",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "amiwrong.mp3",
 						"length": 192
 					},
 					{
 						"id": 1,
 						"name": "Really Don't Care",
 						"artist":"Demi Lovato feat. Cher Lloyd",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "reallydontcare.mp3",
 						"length": 174
 					},
 					{
 						"id": 1,
 						"name": "Problem",
 						"artist":"Ariana Grande feat. Iggy Azalea",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "problem.mp3",
 						"length": 137
 					},
 					{
 						"id": 1,
 						"name": "Break Free",
 						"artist":"Ariana Grande feat. Zedd",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "breakfree.mp3",
 						"length": 148
 					},
 					{
 						"id": 1,
 						"name": "Rather Be",
 						"artist":"Clean Bandit feat. Jess Glynne",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "ratherbe.mp3",
 						"length": 182
 					},
 					{
 						"id": 0,
 						"name": "Maps",
 						"artist": "Maroon 5",
-						"url": "http://r0adkll.com/hackathon/music/songtitle.mp3",
+						"url": "maps.mp3",
 						"length": 290
 					}
 				]

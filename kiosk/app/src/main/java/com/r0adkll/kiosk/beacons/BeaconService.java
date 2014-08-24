@@ -16,10 +16,6 @@ import com.r0adkll.kiosk.session.UserSession;
 import com.r0adkll.kiosk.session.model.ActiveBeacon;
 import com.r0adkll.kiosk.util.DoubleDecker;
 import com.squareup.otto.Produce;
-import com.squareup.otto.Subscribe;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +36,9 @@ public class BeaconService extends Service implements BeaconManager.RangingListe
     private NotificationManager mNotifMan;
     private BeaconManager mBeaconManager;
     private Beacon mActiveBeacon;
+
+    private Fight mCurrentFight;
+
 
     @Override
     public void onCreate() {
@@ -133,12 +132,27 @@ public class BeaconService extends Service implements BeaconManager.RangingListe
 
                     if (competeAccu < activeAccu) {
 
-                        Timber.i("New Active Beacon: " + beacon.getMacAddress());
+                        if(mCurrentFight == null){
+                            mCurrentFight = new Fight(mActiveBeacon, beacon);
+                        }else{
+                            if(mCurrentFight.champ.getMacAddress().equals(mActiveBeacon.getMacAddress()) &&
+                               !mCurrentFight.challenger.getMacAddress().equals(beacon.getMacAddress())){
+                                mCurrentFight = new Fight(mActiveBeacon, beacon);
+                            }
+                        }
 
-                        // Confirmed take over
-                        mActiveBeacon = beacon;
-                        DoubleDecker.getBus().post(new ActiveBeacon(mActiveBeacon));
-                        break;
+                        if(mCurrentFight.incrementCount() > 3) {
+
+                            // Check against the beacon
+
+                            Timber.i("New Active Beacon: " + beacon.getMacAddress());
+
+                            // Confirmed take over
+                            mActiveBeacon = beacon;
+                            DoubleDecker.getBus().post(new ActiveBeacon(mActiveBeacon));
+                            mCurrentFight = null;
+                            return;
+                        }
 
                     }
                 }
@@ -156,6 +170,27 @@ public class BeaconService extends Service implements BeaconManager.RangingListe
             return new ActiveBeacon(mActiveBeacon);
 
         return null;
+    }
+
+    static class Fight{
+
+        public Beacon champ;
+        public Beacon challenger;
+        int score;
+
+        public Fight(Beacon champ, Beacon challenger){
+            this.champ = champ;
+            this.challenger = challenger;
+        }
+
+        public int incrementCount(){
+            return score++;
+        }
+
+        public int getScore(){
+            return score;
+        }
+
     }
 
 }

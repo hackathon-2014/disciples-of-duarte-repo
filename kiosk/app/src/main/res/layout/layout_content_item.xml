@@ -29,6 +29,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:scaleType="centerCrop"
+                android:background="#7bd9c6"
                 />
 
             <LinearLayout

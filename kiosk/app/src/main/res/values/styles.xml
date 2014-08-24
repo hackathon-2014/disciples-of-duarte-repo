@@ -2,7 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/Widget.Hyper.ActionBar.Regular</item>
     </style>
 
     <style name="Theme.Hyper" parent="android:Theme.Holo.Light">
@@ -17,6 +17,15 @@
     </style>
 
     <style name="TextAppearance.AB.title" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.Hyper.ActionBar.Regular" parent="android:Widget.Holo.Light.ActionBar">
+        <item name="android:background">#FF4444</item>
+        <item name="android:titleTextStyle">@style/TextAppearance.AB.title</item>
+    </style>
+
+    <style name="TextAppearance.AB.title.Regular" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:textColor">@color/white</item>
     </style>
 
